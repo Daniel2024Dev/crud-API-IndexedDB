@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style/index.css" />
+    <title>crud indexedDB</title>
+  </head>
+  <body>
+    <div class="faixa"></div>
+    <div class="container">
+      <header>
+        <h1>crud indexedDB</h1>
+      </header>
+      <form>
+          <label for="input_nome">Nome do usuário</label>
+          <input id="input_nome" placeholder="Digite seu nome" type="text" required/>
+         
+          <label for="input_cpf">CPF do usuário</label>
+          <input id="input_cpf" placeholder="Digite seu CPF" type="number" required/>
+        
+          <button onclick="adicionarDados()">cadastrar</button>
+      </form>
+    </div>
+    <div class="background_aparece" id="background_table">
+      <div class="cabecalho">
+        <h3 class="cabecalhoNOME">NOME</h3>
+        <h3 class="cabecalhoCPF">CPF</h3>
+      </div>
+      <div class="table">
+        <table id="lista-dados"></table>
+      </div>
+    </div>
+    <script src="script/controler.js"></script>
+    <script src="script/models.js"></script>
+   
+  </body>
+</html>      
