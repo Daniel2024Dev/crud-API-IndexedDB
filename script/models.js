@@ -66,6 +66,7 @@ function adicionarDados() {
       alert("Erro ! Tente novamente por favor ! \n Campo em branco, sistema não aceita campo vazio !");
     }
   }
+  db.close(); // Fechar o banco de dados após a conclusão da operação
 }
 // Função para ler dados do banco de dados
 function lerDados() {
@@ -137,6 +138,11 @@ function lerDados() {
       console.log("Erro ao ler dados: " + event.target.errorCode);
     };
   }
+  //verifica se já terminol o processo de leitura
+  if (!db) {
+    db.close(); // Fechar o banco de dados após a conclusão da operação
+    return;
+  }
 }
 // Função para atualizar dados no banco de dados
 function atualizarDados(id) {
@@ -159,9 +165,7 @@ function atualizarDados(id) {
   }else{
     alert("Erro ! Tente novamente por favor ! \n Campo em branco, sistema não aceita campo vazio !");
   }
-  
-
-  
+  db.close(); // Fechar o banco de dados após a conclusão da operação
 }
 
 // Função para deletar dados do banco de dados
@@ -178,4 +182,5 @@ function deletarDados(id) {
     console.log("Erro ao deletar dados: " + event.target.errorCode);
   };
   location.reload(); //atualiza a tela
+  db.close(); // Fechar o banco de dados após a conclusão da operação
 }
